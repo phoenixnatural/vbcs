@@ -11,7 +11,18 @@ table(d,["Role","What you do","Responsibility in EBS"],[
  ["Reporting Manager (RM)","Receive notifications; nominate a replacement for your exiting/moving direct report","Airtel Africa Manager Responsibility Approvals"],
  ["F-DOA Superuser","Correct/override an Exit replacement within the allowed window; run replacement reports","ASI Invoice DOA Access"]],
  widths=[1.6,3.0,1.9])
-d.add_heading("1.2 Before you start",2)
+d.add_heading("1.2 Components at a glance — responsibilities and navigation",2)
+table(d,["Component","Type","Responsibility","Navigation / Access"],[
+ ["Exit Replacement","Form","Airtel Africa Manager Responsibility Approvals","ASI FDOA Replacement > Exit Replacement"],
+ ["Movement Replacement","Form","Airtel Africa Manager Responsibility Approvals","ASI FDOA Replacement > Movement Replacement"],
+ ["Superuser Replacement","Form","ASI Invoice DOA Access","ASI FDOA Replacement > Superuser Replacement"],
+ ["Airtel FDOA Manager Replacement Report (ASIFDOAMGRRPT)","Concurrent Program (report)","ASI Invoice DOA Access","Requests > Submit a New Request"],
+ ["Airtel FDOA Superuser Replacement Report (ASIFDOASURPT)","Concurrent Program (report)","ASI Invoice DOA Access","Requests > Submit a New Request"],
+ ["Exit/Movement Notification engine (ASIFDOANOTIF)","Concurrent Program (scheduled)","Scheduled by IT — no user action","Runs daily 12:00"],
+ ["PR/PO Requestor Update (ASIFDOAPRPO)","Concurrent Program (scheduled)","Scheduled by IT — no user action","Runs daily 00:30"],
+ ["QP Approver Update (ASIFDOAQP)","Concurrent Program (scheduled)","Scheduled by IT — no user action","Runs daily 00:35"]],
+ widths=[2.2,1.4,1.6,1.6])
+d.add_heading("1.3 Before you start",2)
 bullets(d,[
  "Your EBS user must be linked to your employee record. If not, the form shows: 'CR# 2026-02-0585 - This form requires an EBS user linked to an employee record.' — contact the System Administrator.",
  "You need the responsibility listed above. Managers receive theirs through the standard business process.",
