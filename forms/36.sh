@@ -6,8 +6,8 @@ for f in ASI_FDOA_EXIT_FMB ASI_FDOA_MOVEMENT_FMB ASI_FDOA_SUPERUSER_FMB
 do
   cp $f.xml $f.xml.bakC
   sed -i -f forms_fix2.sed $f.xml
-  echo "== $f: runtime-group calls (expect 2 or 3):"
-  grep -c CREATE_GROUP_FROM_QUERY $f.xml
+  echo "== $f: runtime-group calls (expect EXIT=2 MOVEMENT=2 SUPERUSER=3):"
+  grep -o CREATE_GROUP_FROM_QUERY $f.xml | wc -l
   frmxml2f.sh OVERWRITE=YES $f.xml
   frmcmp_batch module=$f.fmb userid=apps/CHANGEME output_file=$f.fmx module_type=form compile_all=special 2>&1 | tail -4
 done
