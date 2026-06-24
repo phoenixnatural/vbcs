@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
--- Sample: calling FND_EMAIL.SEND
+-- Sample: calling FND_EMAIL.SEND   (Oracle E-Business Suite R12.2.x)
 --------------------------------------------------------------------------------
--- FND_EMAIL is a custom package in our database, so the exact parameter names
--- below may differ from your installed version. Run section (0) first to confirm
--- the real signature, then adjust the named parameters in the examples to match.
+-- FND_EMAIL is NOT seeded by EBS -- if FND_EMAIL.SEND raises
+--   PLS-00201: identifier 'FND_EMAIL.SEND' must be declared
+-- the package isn't installed. Install it first:
+--   1) sql/fnd_email_pkg.sql          (run as APPS  -- creates the package)
+--   2) sql/fnd_email_network_acl.sql  (run as DBA   -- allows APPS -> SMTP host)
 --
--- Tested style: Oracle Database PL/SQL (the DB that backs our VBCS app).
--- Run from SQL*Plus / SQLcl / SQL Developer connected to the app schema.
+-- Then run the examples below from SQL*Plus / SQLcl connected as APPS.
 --------------------------------------------------------------------------------
 
 
